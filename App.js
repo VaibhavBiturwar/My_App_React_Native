@@ -48,9 +48,9 @@ export default function App() {
 
       {/* <AvatarScreen /> */}
 
-      {/* <MyLottieAnimation /> */}
+      <MyLottieAnimation />
 
-      <MyImageBackground />
+      {/* <MyImageBackground /> */}
     </View>
   );
 
