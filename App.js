@@ -27,9 +27,11 @@ import { MyLottieAnimation } from "./src/components/lottieAnimation";
 
 import { MyImageBackground } from "./src/components/imageBackground";
 
+import { CameraModule } from "./src/Camera/CameraModule";
+
 export default function App() {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       {/* <Text style={styles.headerText}>Component goes Here</Text> */}
       {/* <TimeoutScreen /> */}
       {/* <IntervalExample /> */}
@@ -51,6 +53,10 @@ export default function App() {
       <MyLottieAnimation />
 
       {/* <MyImageBackground /> */}
+
+      {/* <NavigationContainer>
+        <CameraModule />
+      </NavigationContainer> */}
     </View>
   );
 
@@ -71,6 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    margin: 200,
   },
   headerText: {
     fontSize: 20,
