@@ -29,6 +29,8 @@ import { MyImageBackground } from "./src/components/imageBackground";
 
 import { CameraModule } from "./src/Camera/CameraModule";
 
+import { MyFlatLists } from "./src/Flatlist/flatlist.component";
+
 export default function App() {
   return (
     <View style={{ flex: 1 }}>
@@ -50,13 +52,15 @@ export default function App() {
 
       {/* <AvatarScreen /> */}
 
-      <MyLottieAnimation />
+      {/* <MyLottieAnimation /> */}
 
       {/* <MyImageBackground /> */}
 
       {/* <NavigationContainer>
         <CameraModule />
       </NavigationContainer> */}
+
+      <MyFlatLists />
     </View>
   );
 
