@@ -34,6 +34,8 @@ import { MyFlatLists } from "./src/Flatlist/flatlist.component";
 
 import { AlertComponent } from "./src/components/alert.component";
 
+import { UseEffectComponent } from "./src/components/useEffect.component";
+
 export default function App() {
   return (
     <View style={{ flex: 1, marginTop: 20, padding: 10 }}>
@@ -66,7 +68,9 @@ export default function App() {
 
       {/* <OtpAuth /> */}
 
-      <AlertComponent />
+      {/* <AlertComponent /> */}
+
+      <UseEffectComponent />
     </View>
   );
 
