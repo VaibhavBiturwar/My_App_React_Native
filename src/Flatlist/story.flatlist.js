@@ -35,6 +35,8 @@ export const Story = () => {
         data={jsonData}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        number={5} // number of elements to render initially
+        inverted // by default sscrolls to bottom of list
       />
     </View>
   );

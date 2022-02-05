@@ -20,6 +20,7 @@ import { MyTabNavigator } from "./src/Navigators/Tab Navigator/myTabNavigator";
 import { MyStackNavigator } from "./src/Navigators/Stack Navigator/myStackNavigator";
 
 import { AuthPage } from "./src/Auth/AuthPage";
+import { OtpAuth } from "./src/Auth/OtpAuth";
 
 import { AvatarScreen } from "./src/components/avatar";
 
@@ -33,8 +34,7 @@ import { MyFlatLists } from "./src/Flatlist/flatlist.component";
 
 export default function App() {
   return (
-    <View style={{ flex: 1 }}>
-      {/* <Text style={styles.headerText}>Component goes Here</Text> */}
+    <View style={{ flex: 1, marginTop: 20, padding: 10 }}>
       {/* <TimeoutScreen /> */}
       {/* <IntervalExample /> */}
 
@@ -60,7 +60,9 @@ export default function App() {
         <CameraModule />
       </NavigationContainer> */}
 
-      <MyFlatLists />
+      {/* <MyFlatLists /> */}
+
+      <OtpAuth />
     </View>
   );
 
@@ -78,12 +80,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",
     margin: 200,
-  },
-  headerText: {
-    fontSize: 20,
   },
 });
