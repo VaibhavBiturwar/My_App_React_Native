@@ -32,6 +32,8 @@ import { CameraModule } from "./src/Camera/CameraModule";
 
 import { MyFlatLists } from "./src/Flatlist/flatlist.component";
 
+import { AlertComponent } from "./src/components/alert.component";
+
 export default function App() {
   return (
     <View style={{ flex: 1, marginTop: 20, padding: 10 }}>
@@ -62,7 +64,9 @@ export default function App() {
 
       {/* <MyFlatLists /> */}
 
-      <OtpAuth />
+      {/* <OtpAuth /> */}
+
+      <AlertComponent />
     </View>
   );
 
