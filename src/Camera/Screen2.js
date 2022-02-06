@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Button } from "react-native";
+import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
+import { Colors } from "react-native-paper";
+
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 // expo install expo-camera
 import { Camera } from "expo-camera";
@@ -8,15 +11,18 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const Screen2 = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(null);
-  const [type, setType] = useState(Camera.Constants.Type.back);
+  const [type, setType] = useState(Camera.Constants.Type.front);
+  const [isLoading, setIsLoading] = useState(false);
+  const iconSize = 50;
 
   const CameraRef = useRef();
 
   const snap = async () => {
     if (CameraRef) {
       const photo = await CameraRef.current.takePictureAsync();
-      console.log(photo);
+      // console.log(photo);
       await AsyncStorage.setItem("dp", photo.uri);
+      setIsLoading(false);
       navigation.goBack();
     }
   };
@@ -36,21 +42,60 @@ export const Screen2 = ({ navigation }) => {
   }
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => {
-          console.log("Image");
-          snap();
+      <Camera
+        type={type}
+        ratio={"16:9"}
+        style={styles.cameraContainer}
+        ref={(camera) => {
+          CameraRef.current = camera;
         }}
-        style={styles.container}
-      >
-        <Camera
-          type={Camera.Constants.Type.back}
-          style={styles.cameraContainer}
-          ref={(camera) => {
-            CameraRef.current = camera;
+      />
+
+      <View style={styles.cameraButtons}>
+        <Icon
+          name="switch-camera"
+          size={iconSize}
+          color={Colors.white}
+          onPress={() => {
+            console.log("Pressed");
+            type == Camera.Constants.Type.back
+              ? setType(Camera.Constants.Type.front)
+              : setType(Camera.Constants.Type.back);
           }}
         />
-      </TouchableOpacity>
+        <Icon
+          name="camera"
+          size={iconSize}
+          color={Colors.white}
+          onPress={() => {
+            setIsLoading(true);
+            snap();
+            console.log("Image Captured");
+          }}
+        />
+
+        <Icon
+          name="cancel"
+          size={iconSize}
+          color={Colors.white}
+          onPress={() => {
+            console.log("Pressed Cancel");
+            navigation.goBack();
+          }}
+        />
+      </View>
+      <ActivityIndicator size="large" color="white" animating={isLoading} />
+      {isLoading && (
+        <View style={{ alignItems: "center" }}>
+          <Text
+            style={{
+              color: "white",
+            }}
+          >
+            Keep Steady
+          </Text>
+        </View>
+      )}
     </View>
   );
 };
@@ -60,8 +105,7 @@ export default Screen2;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: "100%",
-    backgroundColor: "lightblue",
+    backgroundColor: "black",
   },
   cameraContainer: {
     height: "80%",
@@ -73,26 +117,10 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "yellow",
   },
+  cameraButtons: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginHorizontal: 25,
+    marginVertical: 20,
+  },
 });
-
-/*
-
-<Camera style={styles.camera} type={type}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              setType(
-                type === Camera.Constants.Type.back
-                  ? Camera.Constants.Type.front
-                  : Camera.Constants.Type.back
-              );
-            }}
-          >
-            <Text style={styles.text}> Flip </Text>
-          </TouchableOpacity>
-        </View>
-      </Camera>
-
-
-*/

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 // local imports
 import IntervalExample from "./src/components/intervalScreen";
@@ -38,7 +38,8 @@ import { UseEffectComponent } from "./src/components/useEffect.component";
 
 export default function App() {
   return (
-    <View style={{ flex: 1, marginTop: 20, padding: 10 }}>
+    // <View style={styles.container}>
+    <View style={styles.containerWithoutPadding}>
       {/* <TimeoutScreen /> */}
       {/* <IntervalExample /> */}
 
@@ -60,9 +61,9 @@ export default function App() {
 
       {/* <MyImageBackground /> */}
 
-      {/* <NavigationContainer>
+      <NavigationContainer>
         <CameraModule />
-      </NavigationContainer> */}
+      </NavigationContainer>
 
       {/* <MyFlatLists /> */}
 
@@ -70,7 +71,7 @@ export default function App() {
 
       {/* <AlertComponent /> */}
 
-      <UseEffectComponent />
+      {/* <UseEffectComponent /> */}
     </View>
   );
 
@@ -88,9 +89,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: 200,
+    marginTop: 20,
+    padding: 10,
+  },
+  containerWithoutPadding: {
+    flex: 1,
   },
 });
