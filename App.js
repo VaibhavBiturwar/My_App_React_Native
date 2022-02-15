@@ -36,6 +36,10 @@ import { AlertComponent } from "./src/components/alert.component";
 
 import { UseEffectComponent } from "./src/components/useEffect.component";
 
+import { PromiseComponent } from "./src/components/promise.component";
+
+import { CreditCard } from "./src/components/creditCard";
+
 export default function App() {
   return (
     // <View style={styles.container}>
@@ -61,9 +65,9 @@ export default function App() {
 
       {/* <MyImageBackground /> */}
 
-      <NavigationContainer>
+      {/* <NavigationContainer>
         <CameraModule />
-      </NavigationContainer>
+      </NavigationContainer> */}
 
       {/* <MyFlatLists /> */}
 
@@ -72,6 +76,10 @@ export default function App() {
       {/* <AlertComponent /> */}
 
       {/* <UseEffectComponent /> */}
+
+      {/* <PromiseComponent /> */}
+
+      <CreditCard />
     </View>
   );
 
