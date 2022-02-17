@@ -4,6 +4,23 @@ import { Text, StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 
+import { Lobster_400Regular } from "@expo-google-fonts/lobster";
+
+import {
+  Roboto_100Thin,
+  Roboto_100Thin_Italic,
+  Roboto_300Light,
+  Roboto_300Light_Italic,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_500Medium,
+  Roboto_500Medium_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+  Roboto_900Black,
+  Roboto_900Black_Italic,
+} from "@expo-google-fonts/roboto";
+
 export const CustomFontText = (props) => {
   let [fontsLoaded] = useFonts({
     "Inter-SemiBoldItalic":
@@ -12,6 +29,13 @@ export const CustomFontText = (props) => {
     "Raleway-Thin": require("../../assets/fonts/Raleway-Thin.ttf"),
     "Helvetica-Bold": require("../../assets/fonts/Helvetica-Bold.ttf"),
     "Helvetica-Light": require("../../assets/fonts/helvetica-light.ttf"),
+
+    "Roboto-Thin": Roboto_100Thin,
+    "Roboto-Light": Roboto_300Light,
+    Roboto: Roboto_400Regular,
+    "Roboto-Black": Roboto_900Black,
+
+    lobster: Lobster_400Regular,
   });
 
   const setFontType = (type) => {
@@ -26,6 +50,14 @@ export const CustomFontText = (props) => {
         return "Raleway-Thin";
       case "light":
         return "Helvetica-Light";
+      case "Rthin":
+        return "Roboto-Thin";
+      case "Rlight":
+        return "Roboto-Light";
+      case "Rblack":
+        return "Roboto-Black";
+      case "lobster":
+        return "lobster";
     }
   };
   const font = setFontType(props.type ? props.type : "normal");

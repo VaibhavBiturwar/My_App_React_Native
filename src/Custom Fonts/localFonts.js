@@ -13,6 +13,11 @@ export const LocalFont = () => {
       <CustomFontText type="content">This is a Content text</CustomFontText>
       <CustomFontText type="thin">This is a Thin text</CustomFontText>
       <CustomFontText type="light">This is a light text</CustomFontText>
+
+      <CustomFontText type="lobster">This is a Lobster text</CustomFontText>
+      <CustomFontText type="Rthin">This is a Roboto Thin text</CustomFontText>
+      <CustomFontText type="Rlight">This is a Roboto Light text</CustomFontText>
+      <CustomFontText type="Rblack">This is a Roboto Black text</CustomFontText>
     </View>
   );
 };
