@@ -40,10 +40,15 @@ import { PromiseComponent } from "./src/components/promise.component";
 
 import { CreditCard } from "./src/components/creditCard";
 
+import { CustomFonts } from "./src/Custom Fonts/customFonts";
+import { LocalFont } from "./src/Custom Fonts/localFonts";
+import { CustomFontText } from "./src/Custom Fonts/customFont.component";
+
 export default function App() {
   return (
-    // <View style={styles.container}>
-    <View style={styles.containerWithoutPadding}>
+    <View style={styles.container}>
+      {/* // <View style={styles.containerWithoutPadding}> */}
+      <StatusBar />
       {/* <TimeoutScreen /> */}
       {/* <IntervalExample /> */}
 
@@ -79,7 +84,11 @@ export default function App() {
 
       {/* <PromiseComponent /> */}
 
-      <CreditCard />
+      {/* <CreditCard /> */}
+
+      {/* <CustomFonts /> */}
+      <LocalFont />
+      {/* <CustomFontText>This is a demo Text</CustomFontText> */}
     </View>
   );
 
