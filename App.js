@@ -42,65 +42,67 @@ import { CreditCard } from "./src/components/creditCard";
 
 import { CustomFonts } from "./src/Custom Fonts/customFonts";
 import { LocalFont } from "./src/Custom Fonts/localFonts";
-import { CustomFontText } from "./src/Custom Fonts/customFont.component";
+
+import { SQLiteComponent } from "./src/components/sqLite.component";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      {/* // <View style={styles.containerWithoutPadding}> */}
-      <StatusBar />
-      {/* <TimeoutScreen /> */}
-      {/* <IntervalExample /> */}
+  // return (
+  //   <View style={styles.container}>
+  //     {/* // <View style={styles.containerWithoutPadding}> */}
+  //     <StatusBar />
+  //     {/* <TimeoutScreen /> */}
+  //     {/* <IntervalExample /> */}
 
-      {/* <MyActivityIndicator /> */}
+  //     {/* <MyActivityIndicator /> */}
 
-      {/* <PressableButton /> */}
-      {/* <TouchWithoutFeedbackButton /> */}
-      {/* <TouchableOpacityButton /> */}
+  //     {/* <PressableButton /> */}
+  //     {/* <TouchWithoutFeedbackButton /> */}
+  //     {/* <TouchableOpacityButton /> */}
 
-      {/* <MyAccordian /> */}
-      {/* <MyMapView /> */}
-      {/* <PersistentStorage /> */}
+  //     {/* <MyAccordian /> */}
+  //     {/* <MyMapView /> */}
+  //     {/* <PersistentStorage /> */}
 
-      {/* <AuthPage /> */}
+  //     {/* <AuthPage /> */}
 
-      {/* <AvatarScreen /> */}
+  //     {/* <AvatarScreen /> */}
 
-      {/* <MyLottieAnimation /> */}
+  //     {/* <MyLottieAnimation /> */}
 
-      {/* <MyImageBackground /> */}
+  //     {/* <MyImageBackground /> */}
 
-      {/* <NavigationContainer>
-        <CameraModule />
-      </NavigationContainer> */}
+  //     {/* <NavigationContainer>
+  //       <CameraModule />
+  //     </NavigationContainer> */}
 
-      {/* <MyFlatLists /> */}
+  //     {/* <MyFlatLists /> */}
 
-      {/* <OtpAuth /> */}
+  //     {/* <OtpAuth /> */}
 
-      {/* <AlertComponent /> */}
+  //     {/* <AlertComponent /> */}
 
-      {/* <UseEffectComponent /> */}
+  //     {/* <UseEffectComponent /> */}
 
-      {/* <PromiseComponent /> */}
+  //     {/* <PromiseComponent /> */}
 
-      {/* <CreditCard /> */}
+  //     {/* <CreditCard /> */}
 
-      {/* <CustomFonts /> */}
-      <LocalFont />
-      {/* <CustomFontText>This is a demo Text</CustomFontText> */}
-    </View>
-  );
+  //     {/* <CustomFonts /> */}
+  //     {/* <LocalFont /> */}
+
+  //     {/* <SQLiteComponent /> */}
+  //   </View>
+  // );
 
   // Navigation Container should be at the top most level.
-  // return (
-  //   <>
-  //     <NavigationContainer>
-  //       {/* <MyTabNavigator /> */}
-  //       <MyStackNavigator />
-  //     </NavigationContainer>
-  //   </>
-  // );
+  return (
+    <>
+      <NavigationContainer>
+        <MyTabNavigator />
+        {/* <MyStackNavigator /> */}
+      </NavigationContainer>
+    </>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -5,6 +5,7 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
+//  expo install expo-app-loading
 import Apploading from "expo-app-loading";
 
 // expo install expo-app-loading

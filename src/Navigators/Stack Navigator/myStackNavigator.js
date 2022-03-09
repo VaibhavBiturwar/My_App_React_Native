@@ -1,4 +1,5 @@
 import * as React from "react";
+// yarn add @react-navigation/native-stack
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Screen1 from "./screen1";

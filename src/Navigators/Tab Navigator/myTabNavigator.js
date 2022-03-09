@@ -48,14 +48,14 @@ export const MyTabNavigator = () => {
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "blue",
+        tabBarActiveTintColor: "red",
         tabBarInactiveTintColor: "black",
       })}
     >
       <Tab.Screen
         name="Home"
         component={Screen1}
-        options={{ tabBarBadge: 3 }}
+        options={{ tabBarBadge: 100 }}
       />
       <Tab.Screen name="Feeds" component={Screen2} />
       <Tab.Screen name="Settings" component={Screen3} />
